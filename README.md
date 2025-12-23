@@ -1,41 +1,72 @@
-# Website
+# Physical AI & Humanoid Robotics - Comprehensive Guide
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains a comprehensive ebook on Physical AI & Humanoid Robotics, built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+## About This Project
+
+This ebook provides a deep dive into the integration of artificial intelligence with physical robotic systems, focusing on humanoid platforms and embodied AI applications. The content is structured into five comprehensive modules:
+
+- **Module 1**: ROS 2 – The Robotic Nervous System
+- **Module 2**: Digital Twins – Gazebo & Unity
+- **Module 3**: AI Robot Brain – NVIDIA Isaac
+- **Module 4**: Vision–Language–Action (VLA)
+- **Module 5**: Autonomous Humanoid System
 
 ## Installation
 
 ```bash
-yarn
+npm install
+# or
+yarn install
 ```
 
 ## Local Development
 
 ```bash
+npm run start
+# or
 yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Build
+## Building the Site
 
 ```bash
+npm run build
+# or
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be served using any static hosting service.
 
-## Deployment
+## Features
 
-Using SSH:
+- Modern, clean design with excellent readability
+- Responsive layout for all device sizes
+- Fast loading times
+- SEO optimized
+- Accessible and inclusive design
+- Comprehensive documentation structure
 
-```bash
-USE_SSH=true yarn deploy
-```
+## Vercel Deployment
 
-Not using SSH:
+This project is optimized for deployment on Vercel. The following environment is configured:
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+- Framework: Docusaurus
+- Build Command: `npm run build` or `yarn build`
+- Output Directory: `build`
+- Install Command: `npm install` or `yarn install`
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Contributing
+
+If you'd like to contribute to this ebook, please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.

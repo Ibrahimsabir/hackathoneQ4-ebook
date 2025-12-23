@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Physical AI & Humanoid Robotics',
+  tagline: 'A Comprehensive Guide to Embodied AI Systems',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -74,10 +74,13 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    stylesheets: [
+      'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap',
+    ],
     navbar: {
-      title: 'My Site',
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Physical AI & Humanoid Robotics Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -85,7 +88,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Book Chapters',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -138,7 +141,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

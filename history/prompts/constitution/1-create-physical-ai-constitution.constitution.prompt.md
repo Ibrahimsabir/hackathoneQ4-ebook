@@ -1,3 +1,162 @@
+---
+id: 1
+title: Create Physical AI Constitution
+stage: constitution
+date: 2025-12-23
+surface: agent
+model: Claude Sonnet 4.5
+feature: none
+branch: master
+user: user
+command: /sp.constitution
+labels: [constitution,physical-ai,robotics]
+links:
+  spec: null
+  ticket: null
+  adr: null
+  pr: null
+files:
+ - .specify/memory/constitution.md
+tests:
+---
+
+## Prompt
+
+```text
+You are a senior curriculum architect, AI systems designer, and technical constitution author.
+
+Your task is to generate a STRICT and ENFORCEABLE "constitution.md" file
+for a Spec-Kit Plus driven technical book on
+Physical AI & Humanoid Robotics.
+
+You have been provided with detailed course content including:
+- Course goals and philosophy
+- Clearly defined modules
+- Weekly breakdown
+- Learning outcomes
+- Hardware, simulation, and lab architecture
+- Cloud vs on-prem execution constraints
+- Capstone project definition
+
+YOUR OBJECTIVE:
+Extract NON-NEGOTIABLE RULES and STRUCTURAL CONSTRAINTS from the content
+and convert them into a "constitution.md" file that will govern ALL future
+AI-written chapters of the book.
+
+This constitution must ensure:
+- The book is MODULE-DRIVEN
+- Each chapter belongs to EXACTLY ONE module
+- No topic crosses module boundaries
+- Learning progression follows the defined order
+- Physical AI constraints are always respected
+
+--------------------------------------------------
+OUTPUT FILE REQUIREMENTS
+--------------------------------------------------
+- Output ONE file only: constitution.md
+- Spec-Kit Plus compatible
+- Use Markdown headings
+- Rules must be imperative and enforceable
+- No summaries, no teaching, no explanations
+- No deployment or DevOps content
+
+--------------------------------------------------
+MANDATORY SECTIONS (IN THIS ORDER)
+--------------------------------------------------
+
+# Purpose of the Constitution
+Define what kind of book this is and what kind of AI systems it is allowed to describe.
+
+# Target Audience Constraints
+Define assumed background, forbidden assumptions, and learner responsibilities.
+
+# Book Structure & Module System
+Define the REQUIRED module-based structure of the book.
+Rules must specify that:
+- The book is divided into fixed modules
+- Modules cannot be reordered, merged, or skipped
+- Each chapter must declare its parent module
+
+# Module Definitions & Boundaries
+Explicitly define EACH module with:
+- Its purpose
+- Allowed topics
+- Forbidden topics
+- Required tools and platforms
+
+Modules to enforce:
+- Module 1: ROS 2 – The Robotic Nervous System
+- Module 2: Digital Twins – Gazebo & Unity
+- Module 3: AI Robot Brain – NVIDIA Isaac
+- Module 4: Vision–Language–Action (VLA)
+- Capstone Module: Autonomous Humanoid System
+
+# Weekly Progression Rules
+Define how weekly breakdown constrains depth and pacing.
+No future content may violate the weekly sequencing logic.
+
+# Writing Style Rules
+Rules governing tone, density, precision, and technical depth.
+
+# Explanation Rules
+Rules enforcing:
+- Physical grounding
+- System-level reasoning
+- Simulation-to-real mapping
+- Cause–effect explanations
+
+# Code & Technical Content Rules
+Rules governing:
+- ROS 2 code
+- Python usage
+- Real APIs only
+- Simulation vs hardware code separation
+
+# Hardware & Reality Constraints
+Rules enforcing:
+- RTX GPU requirements
+- Jetson resource limits
+- Latency constraints
+- Physics realism
+
+# AI & Robotics Integration Rules
+Rules governing:
+- LLM usage
+- Voice-to-action pipelines
+- Cognitive planning vs execution
+- VLA system boundaries
+
+# Examples, Labs & Capstone Rules
+Rules for exercises, labs, and the final project.
+
+# Terminology & Naming Rules
+Rules to maintain consistency across modules and chapters.
+
+# What Is Strictly Forbidden
+Hard bans on:
+- Marketing language
+- Purely digital AI without embodiment
+- Hand-wavy cloud assumptions
+- Ignoring hardware limits
+
+# AI Behavior Rules
+Rules that the AI writer must obey at all times.
+
+--------------------------------------------------
+CRITICAL CONSTRAINTS
+--------------------------------------------------
+- DO NOT rewrite or summarize the content
+- DO NOT invent modules, tools, or weeks
+- DO NOT soften rules into suggestions
+- Extract rules ONLY from the provided content
+- Write as if this constitution will be used to audit AI output
+
+Generate the constitution.md file now.
+```
+
+## Response snapshot
+
+```markdown
 <!--
 Sync Impact Report:
 Version change: N/A → 1.0.0
@@ -88,3 +247,19 @@ The AI writer must always consider physical embodiment when describing AI system
 This constitution supersedes all other practices and guidelines for the Physical AI & Humanoid Robotics book. All chapters, code examples, and exercises must comply with these rules. Amendments require explicit documentation of changes, approval from curriculum architects, and migration plans for existing content. All reviews must verify constitution compliance. Complexity must be justified with specific hardware or performance requirements.
 
 **Version**: 1.0.0 | **Ratified**: 2025-12-23 | **Last Amended**: 2025-12-23
+```
+
+## Outcome
+
+- ✅ Impact: Created comprehensive constitution file for Physical AI & Humanoid Robotics book
+- 🧪 Tests: N/A
+- 📁 Files: Created .specify/memory/constitution.md with module-based structure
+- 🔁 Next prompts: N/A
+- 🧠 Reflection: Constitution enforces strict module boundaries and physical AI focus
+
+## Evaluation notes (flywheel)
+
+- Failure modes observed: N/A
+- Graders run and results (PASS/FAIL): N/A
+- Prompt variant (if applicable): N/A
+- Next experiment (smallest change to try): N/A
