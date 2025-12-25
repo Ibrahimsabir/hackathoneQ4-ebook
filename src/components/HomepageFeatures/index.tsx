@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Learn Advanced AI',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Explore cutting-edge concepts in Physical AI and Humanoid Robotics.
+        Learn about ROS 2, Digital Twins, and AI Robot Brains.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Practical Applications',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Discover real-world implementations of Vision-Language-Action systems
+        and autonomous humanoid platforms through comprehensive tutorials.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Comprehensive Guide',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        A complete resource covering everything from basic ROS concepts
+        to advanced autonomous humanoid systems and embodied AI.
       </>
     ),
   },
