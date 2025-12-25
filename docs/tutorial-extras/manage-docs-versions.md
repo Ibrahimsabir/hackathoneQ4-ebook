@@ -45,7 +45,7 @@ export default {
 
 The docs version dropdown appears in your navbar:
 
-![Docs Version Dropdown](./img/docsVersionDropdown.png)
+![Book Version Dropdown](./img/bookVersionDropdown.png)
 
 ## Update an existing version
 

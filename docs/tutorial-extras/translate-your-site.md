@@ -71,7 +71,7 @@ export default {
 
 The locale dropdown now appears in your navbar:
 
-![Locale Dropdown](./img/localeDropdown.png)
+![Book Language Dropdown](./img/bookLocaleDropdown.png)
 
 ## Build your localized site
 

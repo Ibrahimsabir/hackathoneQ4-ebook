@@ -17,7 +17,7 @@ Create a Markdown file at `docs/hello.md`:
 ```md title="docs/hello.md"
 # Hello
 
-This is my **first Docusaurus document**!
+This is my **first ebook document**!
 ```
 
 A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
@@ -36,7 +36,7 @@ sidebar_position: 3
 
 # Hello
 
-This is my **first Docusaurus document**!
+This is my **first ebook document**!
 ```
 
 It is also possible to create your sidebar explicitly in `sidebars.js`:

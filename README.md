@@ -1,6 +1,6 @@
 # Physical AI & Humanoid Robotics - Comprehensive Guide
 
-This repository contains a comprehensive ebook on Physical AI & Humanoid Robotics, built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains a comprehensive ebook on Physical AI & Humanoid Robotics, built using a modern static website generator.
 
 ## About This Project
 
