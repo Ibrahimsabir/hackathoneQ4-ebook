@@ -22,8 +22,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Ibrahimsabir', // Usually your GitHub org/user name.
+  projectName: 'hackathoneQ4-ebook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -91,7 +91,12 @@ const config: Config = {
           label: 'Book Chapters',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/Ibrahimsabir/hackathoneQ4-ebook',
           label: 'GitHub',
           position: 'right',
         },
@@ -135,12 +140,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/Ibrahimsabir/hackathoneQ4-ebook',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book.`,
     },
     prism: {
       theme: prismThemes.github,
