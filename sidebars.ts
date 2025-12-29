@@ -39,52 +39,31 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Module 2: Digital Twins – Gazebo & Unity',
+          label: 'Module 2: Digital Twins – Simulation Environments',
           items: [
             'module2/chapter2_1_simulation_environments',
-            'module2/chapter2_2_robot_modeling_urdf',
-            'module2/chapter2_3_physics_simulation',
-            'module2/chapter2_4_sensor_simulation',
-            'module2/chapter2_5_unity_setup',
-            'module2/chapter2_6_validation_simulation'
+            'module2/chapter2_2_robot_modeling_urdf'
           ],
         },
         {
           type: 'category',
           label: 'Module 3: AI Robot Brain – NVIDIA Isaac',
           items: [
-            'module3/chapter3_1_introduction_isaac',
-            'module3/chapter3_2_perception_pipelines',
-            'module3/chapter3_3_navigation_path_planning',
-            'module3/chapter3_4_control_algorithms',
-            'module3/chapter3_5_ai_processing',
-            'module3/chapter3_6_isaac_sim_integration'
+            'module3/chapter3_1_introduction_isaac'
           ],
         },
         {
           type: 'category',
-          label: 'Module 4: Vision–Language–Action (VLA)',
+          label: 'Module 4: Vision–Language–Action (VLA) Systems',
           items: [
-            'module4/chapter4_1_introduction_multimodal',
-            'module4/chapter4_2_vision_processing',
-            'module4/chapter4_3_language_understanding',
-            'module4/chapter4_4_voice_to_action',
-            'module4/chapter4_5_cognitive_planning',
-            'module4/chapter4_6_multimodal_fusion',
-            'module4/chapter4_7_advanced_vla_topics',
-            'module4/chapter4_8_vla_integration_patterns',
-            'module4/chapter4_9_evaluation_validation',
-            'module4/chapter4_10_vla_deployment_optimization'
+            'module4/chapter4_1_introduction_multimodal'
           ],
         },
         {
           type: 'category',
           label: 'Module 5: Autonomous Humanoid System',
           items: [
-            'module5/task5_1_system_architecture',
-            'module5/task5_2_ros_integration',
-            'module5/task5_3_simulation_real_mapping',
-            'module5/task5_4_performance_optimization'
+            'module5/chapter5_1_autonomous_humanoid_system'
           ],
         }
       ],

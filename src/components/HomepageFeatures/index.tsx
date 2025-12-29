@@ -21,12 +21,12 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Practical Applications',
+    title: 'Interactive Learning',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Discover real-world implementations of Vision-Language-Action systems
-        and autonomous humanoid platforms through comprehensive tutorials.
+        Engage with interactive examples and exercises throughout the book
+        to reinforce your understanding of Physical AI and Humanoid Robotics concepts.
       </>
     ),
   },
