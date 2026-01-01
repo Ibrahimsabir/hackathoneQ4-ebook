@@ -15,8 +15,12 @@ interface Message {
 }
 
 export default function Chatbot(): JSX.Element {
-  // Note: Backend runs locally. For production, deploy backend separately and update this URL
-  const backendUrl = 'http://localhost:8000';
+  // Check if we're in development or production environment
+  const backendUrl = typeof window !== 'undefined'
+    ? (process.env.NODE_ENV === 'production'
+        ? '' // No backend URL in production for frontend-only mode
+        : 'http://localhost:8000') // Local backend for development
+    : 'http://localhost:8000';
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -56,37 +60,61 @@ export default function Chatbot(): JSX.Element {
     setInput('');
     setIsLoading(true);
 
-    try {
-      const response = await fetch(`${backendUrl}/api/ask`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: input,
-        }),
-      });
+    // Check if we're in production (frontend-only mode)
+    if (process.env.NODE_ENV === 'production' || !backendUrl) {
+      // Frontend-only mode: return a demo response
+      setTimeout(() => {
+        const demoResponses = [
+          "This is a frontend-only demo. In production, this would connect to a RAG backend to answer questions about Physical AI & Humanoid Robotics.",
+          "Great question! In the full version, I would search through the book content and provide an accurate answer based on the relevant chapters.",
+          "Thanks for your question! The RAG system would normally retrieve relevant information from the book and generate a comprehensive response.",
+          "That's an interesting topic! In the deployed version with backend, I would provide detailed information from the book content."
+        ];
 
-      if (response.ok) {
-        const data = await response.json();
+        const randomResponse = demoResponses[Math.floor(Math.random() * demoResponses.length)];
+
         const assistantMessage: Message = {
           role: 'assistant',
-          content: data.answer || 'I couldn\'t generate a response. Please try again.',
+          content: randomResponse,
           timestamp: new Date(),
         };
         setMessages(prev => [...prev, assistantMessage]);
-      } else {
-        throw new Error('Failed to get response');
+        setIsLoading(false);
+      }, 1500); // Simulate API delay
+    } else {
+      // Development mode: connect to backend
+      try {
+        const response = await fetch(`${backendUrl}/api/ask`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: input,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const assistantMessage: Message = {
+            role: 'assistant',
+            content: data.answer || 'I couldn\'t generate a response. Please try again.',
+            timestamp: new Date(),
+          };
+          setMessages(prev => [...prev, assistantMessage]);
+        } else {
+          throw new Error('Failed to get response');
+        }
+      } catch (error) {
+        const errorMessage: Message = {
+          role: 'assistant',
+          content: `⚠️ **Error:** Unable to connect to the backend server at \`${backendUrl}\`. Please make sure it's running and accessible.`,
+          timestamp: new Date(),
+        };
+        setMessages(prev => [...prev, errorMessage]);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      const errorMessage: Message = {
-        role: 'assistant',
-        content: `⚠️ **Error:** Unable to connect to the backend server at \`${backendUrl}\`. Please make sure it's running and accessible.`,
-        timestamp: new Date(),
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -278,9 +306,15 @@ export default function Chatbot(): JSX.Element {
           <p>
             <strong>💡 Tip:</strong> The AI understands markdown formatting and can provide code examples
           </p>
-          <p>
-            <strong>⚙️ Backend:</strong> {backendUrl} | <strong>Model:</strong> Mistral AI (via OpenRouter) | <strong>Vector Store:</strong> Qdrant (467 embeddings)
-          </p>
+          {process.env.NODE_ENV === 'production' ? (
+            <p>
+              <strong>ℹ️ Mode:</strong> Frontend-only demo | Connect to backend for full RAG functionality
+            </p>
+          ) : (
+            <p>
+              <strong>⚙️ Backend:</strong> {backendUrl} | <strong>Model:</strong> Mistral AI (via OpenRouter) | <strong>Vector Store:</strong> Qdrant (467 embeddings)
+            </p>
+          )}
         </motion.div>
       </div>
     </Layout>
