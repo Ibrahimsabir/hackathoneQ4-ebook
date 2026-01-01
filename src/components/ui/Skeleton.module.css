@@ -1,0 +1,56 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 50%,
+    var(--ifm-color-emphasis-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+[data-theme='dark'] .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-emphasis-300) 0%,
+    var(--ifm-color-emphasis-200) 50%,
+    var(--ifm-color-emphasis-300) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Variants */
+.text {
+  height: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.circular {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.rectangular {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 8rem;
+}
+
+/* Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

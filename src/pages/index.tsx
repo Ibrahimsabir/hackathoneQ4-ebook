@@ -14,14 +14,36 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Master Physical AI & Humanoid Robotics
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          From fundamentals to advanced autonomous systems. Build real-world AI robots with ROS 2,
+          Digital Twins, and embodied intelligence.
+        </p>
+        <div className={styles.stats}>
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>6</div>
+            <div className={styles.statLabel}>Chapters</div>
+          </div>
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>AI</div>
+            <div className={styles.statLabel}>Powered</div>
+          </div>
+          <div className={styles.statItem}>
+            <div className={styles.statNumber}>100%</div>
+            <div className={styles.statLabel}>Interactive</div>
+          </div>
+        </div>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Read Ebook - 5min ⏱️
+            Start Reading
+          </Link>
+          <Link
+            className="button button--outline button--lg"
+            to="/chatbot">
+            Try AI Chatbot
           </Link>
         </div>
       </div>

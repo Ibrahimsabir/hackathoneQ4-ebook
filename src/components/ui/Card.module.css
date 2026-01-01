@@ -1,0 +1,107 @@
+/* Card Base Styles */
+.card {
+  background: var(--ifm-background-surface-color, #ffffff);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] .card {
+  background: var(--ifm-background-surface-color, #1e293b);
+}
+
+/* Variants */
+.default {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.elevated {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.outlined {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none;
+}
+
+[data-theme='dark'] .outlined {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Hoverable State */
+.hoverable {
+  cursor: pointer;
+}
+
+.default.hoverable:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transform: translateY(-4px);
+}
+
+.elevated.hoverable:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: translateY(-6px);
+}
+
+.outlined.hoverable:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .outlined.hoverable:hover {
+  border-color: var(--ifm-color-primary-light);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Card Sections */
+.cardHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .cardHeader {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-50);
+}
+
+[data-theme='dark'] .cardFooter {
+  border-top-color: var(--ifm-color-emphasis-300);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .cardHeader,
+  .cardBody {
+    padding: 1rem;
+  }
+
+  .cardFooter {
+    padding: 0.75rem 1rem;
+  }
+
+  .card {
+    border-radius: 0.5rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .hoverable:hover {
+    transform: none;
+  }
+}

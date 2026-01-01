@@ -76,6 +76,11 @@ const config: Config = {
           label: 'Book Chapters',
         },
         {
+          to: '/chatbot',
+          label: '🤖 AI Chatbot',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/Ibrahimsabir/hackathoneQ4-ebook',
           label: 'GitHub',
           position: 'right',
@@ -86,42 +91,50 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Book Content',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Introduction',
+              to: '/docs/intro',
+            },
+            {
+              label: 'All Chapters',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Topics',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Physical AI',
+              to: '/docs/intro',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Humanoid Robotics',
+              to: '/docs/intro',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'ROS 2 Systems',
+              to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
             {
-              label: 'GitHub',
+              label: 'GitHub Repository',
               href: 'https://github.com/Ibrahimsabir/hackathoneQ4-ebook',
+            },
+            {
+              label: 'Live Demo',
+              href: 'https://hackathone-q4-ebook.vercel.app/',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

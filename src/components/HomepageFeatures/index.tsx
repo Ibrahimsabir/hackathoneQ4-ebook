@@ -11,32 +11,35 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Learn Advanced AI',
+    title: 'Master Physical AI',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Explore cutting-edge concepts in Physical AI and Humanoid Robotics.
-        Learn about ROS 2, Digital Twins, and AI Robot Brains.
+        Learn cutting-edge AI techniques for robotics including neural networks,
+        computer vision, and autonomous decision-making. Build intelligent robots
+        that perceive, learn, and adapt to their environment.
       </>
     ),
   },
   {
-    title: 'Interactive Learning',
+    title: 'Build Real Projects',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Engage with interactive examples and exercises throughout the book
-        to reinforce your understanding of Physical AI and Humanoid Robotics concepts.
+        Get hands-on with practical implementations using ROS 2, Digital Twin
+        frameworks, and real robotics hardware. Follow step-by-step tutorials
+        from simulation to physical deployment.
       </>
     ),
   },
   {
-    title: 'Comprehensive Guide',
+    title: 'Expert Guidance',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        A complete resource covering everything from basic ROS concepts
-        to advanced autonomous humanoid systems and embodied AI.
+        Progress from fundamentals to advanced topics with clear explanations
+        and industry best practices. Master humanoid systems, embodied AI,
+        and autonomous robot architectures.
       </>
     ),
   },

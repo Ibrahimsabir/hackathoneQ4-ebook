@@ -1,0 +1,11 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+cohere>=4.9.0
+qdrant-client>=1.8.0
+lxml>=4.9.3
+python-dotenv>=1.0.0
+tqdm>=4.66.1
+Flask>=2.3.0
+psutil>=5.9.0
+openai>=1.10.0
+pydantic>=2.5.0
