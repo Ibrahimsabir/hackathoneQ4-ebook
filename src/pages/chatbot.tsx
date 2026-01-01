@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -15,6 +16,9 @@ interface Message {
 }
 
 export default function Chatbot(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = (siteConfig.customFields?.BACKEND_URL as string) || 'http://localhost:8000';
+
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
@@ -54,7 +58,7 @@ export default function Chatbot(): JSX.Element {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/ask', {
+      const response = await fetch(`${backendUrl}/api/ask`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,7 +82,7 @@ export default function Chatbot(): JSX.Element {
     } catch (error) {
       const errorMessage: Message = {
         role: 'assistant',
-        content: '⚠️ **Error:** Unable to connect to the backend server. Please make sure it\'s running on `http://localhost:8000`',
+        content: `⚠️ **Error:** Unable to connect to the backend server at \`${backendUrl}\`. Please make sure it's running and accessible.`,
         timestamp: new Date(),
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -276,7 +280,7 @@ export default function Chatbot(): JSX.Element {
             <strong>💡 Tip:</strong> The AI understands markdown formatting and can provide code examples
           </p>
           <p>
-            <strong>⚙️ Backend:</strong> http://localhost:8000 | <strong>Model:</strong> Mistral AI (via OpenRouter) | <strong>Vector Store:</strong> Qdrant (467 embeddings)
+            <strong>⚙️ Backend:</strong> {backendUrl} | <strong>Model:</strong> Mistral AI (via OpenRouter) | <strong>Vector Store:</strong> Qdrant (467 embeddings)
           </p>
         </motion.div>
       </div>
