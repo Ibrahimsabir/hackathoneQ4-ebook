@@ -29,7 +29,7 @@ Follow these exact steps to deploy your RAG chatbot backend to Railway.
 2. Select **"Deploy from GitHub repo"**
 3. You'll see a list of your repositories
 4. Find and click: **"Ibrahimsabir/hackathoneQ4-ebook"**
-5. Railway will automatically detect your `railway.json` configuration
+5. Railway will automatically detect your `railway.json` and `nixpacks.toml` configuration
 
 ---
 
@@ -39,10 +39,11 @@ After selecting your repo:
 
 1. Railway will show "Configure Service"
 2. **Service Name:** Keep default or name it `rag-chatbot-api`
-3. **Root Directory:** Leave empty (Railway will use railway.json config)
-4. Click **"Deploy"**
+3. **Root Directory:** Leave empty (Railway will use nixpacks.toml config)
+4. **Builder:** Railway will automatically use Nixpacks (simpler than Docker)
+5. Click **"Deploy"**
 
-Railway will start building using your Dockerfile.
+Railway will start building using Nixpacks (Python 3.11).
 
 ---
 
