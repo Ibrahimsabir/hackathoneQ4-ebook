@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -16,8 +15,8 @@ interface Message {
 }
 
 export default function Chatbot(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-  const backendUrl = (siteConfig.customFields?.BACKEND_URL as string) || 'http://localhost:8000';
+  // Note: Backend runs locally. For production, deploy backend separately and update this URL
+  const backendUrl = 'http://localhost:8000';
 
   const [messages, setMessages] = useState<Message[]>([
     {
